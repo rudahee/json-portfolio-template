@@ -48,8 +48,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/portfolio-template.git
-cd portfolio-template
+git clone https://github.com/rudahee/json-portfolio-template.git
+cd json-portfolio-template
 
 # Install dependencies
 npm install
@@ -380,6 +380,5 @@ If you use this template, I'd love to see your portfolio! Feel free to share it 
 
 ## 💬 Support
 
-- 📧 Email: your@email.com
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/portfolio-template/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/yourusername/portfolio-template/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/rudahee/json-portfolio-template/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/rudahee/json-portfolio-template/discussions)

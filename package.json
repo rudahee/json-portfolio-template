@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-template",
+  "name": "json-portfolio-template",
   "version": "1.0.0",
-  "description": "A modern, fully customizable portfolio website built with Angular 22",
+  "description": "Modern, fully configurable portfolio website built with Angular — edit JSON, not code.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/portfolio-template.git"
+    "url": "https://github.com/rudahee/json-portfolio-template.git"
   },
   "keywords": [
     "portfolio",
@@ -19,7 +19,7 @@
     "creative",
     "showcase"
   ],
-  "author": "Your Name",
+  "author": "rudahee",
   "license": "MIT",
   "private": false,
   "packageManager": "npm@11.19.0",
