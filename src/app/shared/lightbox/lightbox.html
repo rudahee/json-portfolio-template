@@ -1,0 +1,21 @@
+<dialog #dialog class="lightbox" [attr.aria-label]="title()" (keydown)="onKey($event)" (click)="onClick($event)">
+  @if (current(); as image) {
+    <figure class="lightbox__figure">
+      <img [src]="(image.full || image.src) | media" [alt]="image.alt || title()" />
+      <figcaption>
+        <span>{{ image.caption || title() }}</span>
+        @if (images().length > 1) {
+          <span class="lightbox__count">{{ index() + 1 }} de {{ images().length }}</span>
+        }
+      </figcaption>
+    </figure>
+  }
+
+  <div class="lightbox__controls">
+    @if (images().length > 1) {
+      <button type="button" (click)="step(-1)">Anterior</button>
+      <button type="button" (click)="step(1)">Siguiente</button>
+    }
+    <button type="button" (click)="close()" autofocus>Cerrar</button>
+  </div>
+</dialog>

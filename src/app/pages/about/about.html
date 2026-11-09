@@ -1,0 +1,47 @@
+<section class="page wrap">
+  <h1 class="page-title">About me</h1>
+
+  @if (about(); as a) {
+    <div class="about">
+      @if (a.portrait) {
+        <img class="about__portrait" [src]="a.portrait | media" [alt]="'Portrait of ' + site()?.name" />
+      }
+
+      <div class="about__body">
+        <div class="prose about__bio">
+          @for (p of a.bio; track $index) {
+            <p>{{ p }}</p>
+          }
+        </div>
+
+        @if (a.tools?.length) {
+          <h2 class="subhead">Tools</h2>
+          <p class="about__tools">{{ a.tools!.join(', ') }}</p>
+        }
+
+        @if (a.experience?.length) {
+          <h2 class="subhead">Experience</h2>
+          <dl class="about__timeline">
+            @for (e of a.experience; track $index) {
+              <div>
+                <dt>{{ e.period }}</dt>
+                <dd>
+                  <strong>{{ e.role }}</strong>
+                  @if (e.org) {
+                    <span>{{ e.org }}</span>
+                  }
+                </dd>
+              </div>
+            }
+          </dl>
+        }
+
+        @if (a.cv) {
+          <p class="about__cv">
+            <a class="button" [href]="a.cv | media" download>Download CV (PDF)</a>
+          </p>
+        }
+      </div>
+    </div>
+  }
+</section>

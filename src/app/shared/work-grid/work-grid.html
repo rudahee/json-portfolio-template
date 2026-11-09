@@ -1,0 +1,32 @@
+<ul class="grid" role="list">
+  @for (work of works(); track work.slug; let i = $index) {
+    <li>
+      <a
+        class="tile"
+        [routerLink]="link(work)"
+        (mouseenter)="preview($event, true)"
+        (mouseleave)="preview($event, false)"
+        (focus)="preview($event, true)"
+        (blur)="preview($event, false)">
+        <span class="tile__frame" [style.aspect-ratio]="ratioOf(work)">
+          <!-- empty alt: the title is already in the link -->
+          <img
+            [src]="work.cover | media"
+            alt=""
+            [style.object-position]="work.coverPosition ?? null"
+            [attr.loading]="i < eager() ? 'eager' : 'lazy'"
+            decoding="async" />
+          @if (work.preview) {
+            <video [src]="work.preview | media" muted loop playsinline preload="none" aria-hidden="true"></video>
+          }
+        </span>
+        <span class="tile__meta">
+          <span class="tile__title">{{ work.title }}</span>
+          @if (work.year) {
+            <span class="tile__year">{{ work.year }}</span>
+          }
+        </span>
+      </a>
+    </li>
+  }
+</ul>

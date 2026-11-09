@@ -1,0 +1,25 @@
+<section class="page wrap">
+  <header class="page-head">
+    <h1 class="page-title">{{ config()?.label }}</h1>
+    @if (description()) {
+      <p class="page-lead">{{ description() }}</p>
+    }
+  </header>
+
+  @if (tags().length > 1) {
+    <nav class="filters" aria-label="Filter by topic">
+      <a [routerLink]="[]" [queryParams]="{ tag: null }" [class.is-active]="!tag()" [attr.aria-current]="!tag() ? 'true' : null">All</a>
+      @for (t of tags(); track t) {
+        <a [routerLink]="[]" [queryParams]="{ tag: t }" [class.is-active]="tag() === t" [attr.aria-current]="tag() === t ? 'true' : null">{{ t }}</a>
+      }
+    </nav>
+  }
+
+  @if (!loaded()) {
+    <p class="muted" aria-live="polite">Loading…</p>
+  } @else if (shown().length) {
+    <app-work-grid [works]="shown()" [eager]="4" />
+  } @else {
+    <p class="muted">No projects published in this category yet.</p>
+  }
+</section>

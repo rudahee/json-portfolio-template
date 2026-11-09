@@ -1,0 +1,86 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4rem;
+}
+
+.nav__brand {
+  font-weight: 780;
+  font-size: var(--step-1);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.nav__menu ul {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.nav__menu a {
+  display: inline-block;
+  padding-block: 0.4rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 520;
+  background: linear-gradient(var(--accent), var(--accent)) no-repeat left bottom / 0 2px;
+  transition: background-size 0.25s ease, color 0.15s ease;
+}
+
+.nav__menu a:hover {
+  color: var(--ink);
+}
+
+.nav__menu a.is-active {
+  color: var(--ink);
+  background-size: 100% 2px;
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__menu {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 0.5rem var(--gutter) 1.25rem;
+  }
+
+  .nav__menu.is-open {
+    display: block;
+  }
+
+  .nav__menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav__menu a {
+    display: block;
+    padding-block: 0.75rem;
+    font-size: var(--step-1);
+  }
+}

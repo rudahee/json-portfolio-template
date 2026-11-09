@@ -1,0 +1,65 @@
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  border: 0;
+  background: #16181b;
+  color: #e4e6e3;
+}
+
+.lightbox::backdrop {
+  background: #16181b;
+}
+
+.lightbox[open] {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+}
+
+/* The figure lets clicks pass through: clicking the empty space closes it. */
+.lightbox__figure {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  gap: 0.75rem;
+  min-height: 0;
+  pointer-events: none;
+}
+
+.lightbox__figure img {
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  pointer-events: auto;
+}
+
+.lightbox figcaption {
+  display: flex;
+  gap: 1.5rem;
+  font-size: var(--step--1);
+  color: #a9aeb2;
+}
+
+.lightbox__controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.lightbox__controls button {
+  background: transparent;
+  color: inherit;
+  border: 1px solid #3f4449;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.lightbox__controls button:hover {
+  border-color: #8ea6ff;
+}

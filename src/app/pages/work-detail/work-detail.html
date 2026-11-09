@@ -1,0 +1,89 @@
+@if (work(); as w) {
+  <article class="work wrap">
+    <a class="work__back" [routerLink]="['/', section()?.path]">Back to {{ section()?.label }}</a>
+
+    <header class="work__head">
+      <div>
+        <h1 class="page-title">{{ w.title }}</h1>
+        @if (w.summary) {
+          <p class="page-lead">{{ w.summary }}</p>
+        }
+        @if (paragraphs().length) {
+          <div class="prose work__text">
+            @for (p of paragraphs(); track $index) {
+              <p>{{ p }}</p>
+            }
+          </div>
+        }
+      </div>
+
+      <dl class="work__facts">
+        @if (w.year) {
+          <div><dt>Year</dt><dd>{{ w.year }}</dd></div>
+        }
+        @if (w.client) {
+          <div><dt>Client</dt><dd>{{ w.client }}</dd></div>
+        }
+        @if (w.role) {
+          <div><dt>My role</dt><dd>{{ w.role }}</dd></div>
+        }
+        @if (w.tools?.length) {
+          <div><dt>Tools</dt><dd>{{ w.tools!.join(', ') }}</dd></div>
+        }
+      </dl>
+    </header>
+
+    <div class="work__media">
+      @for (m of w.media; track $index) {
+        <figure class="plate">
+          @if (m.type === 'image') {
+            <button type="button" class="plate__zoom" (click)="zoom(m)" [attr.aria-label]="'Zoom in ' + (m.alt || w.title)">
+              <img
+                [src]="m.src | media"
+                [alt]="m.alt || w.title"
+                [attr.width]="m.w ?? null"
+                [attr.height]="m.h ?? null"
+                [attr.loading]="$first ? 'eager' : 'lazy'"
+                [attr.fetchpriority]="$first ? 'high' : null"
+                decoding="async" />
+            </button>
+          } @else {
+            <app-video-embed [video]="m" [fallbackPoster]="w.cover" [title]="w.title" />
+          }
+          @if (m.caption) {
+            <figcaption>{{ m.caption }}</figcaption>
+          }
+        </figure>
+      }
+    </div>
+
+    @if (prev() || next()) {
+      <nav class="pager" aria-label="More work from {{ section()?.label }}">
+        @if (prev(); as p) {
+          <a class="pager__link" [routerLink]="['/', section()?.path, p.slug]">
+            <span class="pager__dir">Previous</span>
+            <span class="pager__title">{{ p.title }}</span>
+          </a>
+        } @else {
+          <span></span>
+        }
+        @if (next(); as n) {
+          <a class="pager__link pager__link--next" [routerLink]="['/', section()?.path, n.slug]">
+            <span class="pager__dir">Next</span>
+            <span class="pager__title">{{ n.title }}</span>
+          </a>
+        }
+      </nav>
+    }
+  </article>
+
+  <app-lightbox [images]="images()" [title]="w.title" />
+} @else if (loaded()) {
+  <section class="page wrap">
+    <h1 class="page-title">This piece isn't published</h1>
+    <p class="page-lead">It may have moved or is no longer part of the portfolio.</p>
+    <p class="not-found__action">
+      <a class="button" [routerLink]="['/', section()?.path]">View all {{ section()?.label }}</a>
+    </p>
+  </section>
+}

@@ -1,0 +1,32 @@
+@if (video().provider === 'file') {
+  <video
+    class="player"
+    controls
+    playsinline
+    preload="metadata"
+    [attr.poster]="poster() ? (poster() | media) : null"
+    [src]="video().src | media"></video>
+} @else if (src()) {
+  <div class="player">
+    @if (active()) {
+      <iframe
+        [src]="src()"
+        [title]="video().title || title()"
+        allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+        allowfullscreen></iframe>
+    } @else {
+      <button type="button" class="player__facade" (click)="active.set(true)">
+        @if (poster()) {
+          <img [src]="poster() | media" alt="" loading="lazy" decoding="async" />
+        }
+        <span class="player__cta">
+          <span class="player__icon" aria-hidden="true"></span>
+          <span>
+            Play {{ video().title || title() }}
+            <small>This will load the {{ provider() }} player</small>
+          </span>
+        </span>
+      </button>
+    }
+  </div>
+}

@@ -1,0 +1,158 @@
+{
+  "works": [
+    {
+      "slug": "featured-project-1",
+      "category": "category1",
+      "title": "Featured Project One",
+      "year": 2026,
+      "cover": "placeholders/ilu-01.svg",
+      "coverPosition": "50% 40%",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "description": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      ],
+      "client": "Personal Project",
+      "tools": ["Tool 1", "Tool 2"],
+      "tags": ["personal", "featured"],
+      "featured": true,
+      "media": [
+        { "type": "image", "src": "placeholders/ilu-01.svg", "alt": "Sample artwork", "w": 1600, "h": 2000 }
+      ]
+    },
+    {
+      "slug": "client-work-example",
+      "category": "category1",
+      "title": "Client Work Example",
+      "year": 2025,
+      "cover": "placeholders/ilu-02.svg",
+      "summary": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+      "client": "Example Client",
+      "role": "Your Role",
+      "tools": ["Tool 3"],
+      "tags": ["commission", "client-work"],
+      "featured": true,
+      "media": [
+        { "type": "image", "src": "placeholders/ilu-02.svg", "alt": "Final piece", "caption": "Final artwork.", "w": 1600, "h": 2000 },
+        { "type": "image", "src": "placeholders/con-04.svg", "alt": "Sketches", "caption": "Early concept sketches.", "w": 2000, "h": 1500 }
+      ]
+    },
+    {
+      "slug": "project-three",
+      "category": "category1",
+      "title": "Project Three",
+      "year": 2025,
+      "cover": "placeholders/ilu-03.svg",
+      "tools": ["Tool 1"],
+      "tags": ["personal"],
+      "featured": true,
+      "media": [{ "type": "image", "src": "placeholders/ilu-03.svg", "alt": "Project Three", "w": 1500, "h": 2000 }]
+    },
+    {
+      "slug": "editorial-work",
+      "category": "category1",
+      "title": "Editorial Work",
+      "year": 2024,
+      "cover": "placeholders/ilu-04.svg",
+      "client": "Example Magazine",
+      "tags": ["editorial", "commission"],
+      "media": [{ "type": "image", "src": "placeholders/ilu-04.svg", "alt": "Cover", "w": 1600, "h": 2000 }]
+    },
+    {
+      "slug": "color-studies",
+      "category": "category1",
+      "title": "Color Studies",
+      "year": 2024,
+      "cover": "placeholders/ilu-05.svg",
+      "tags": ["personal", "study"],
+      "media": [{ "type": "image", "src": "placeholders/ilu-05.svg", "alt": "Color studies", "w": 1600, "h": 1600 }]
+    },
+
+    {
+      "slug": "environment-design",
+      "category": "category2",
+      "title": "Environment Design",
+      "year": 2026,
+      "cover": "placeholders/con-01.svg",
+      "summary": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
+      "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+      "client": "Personal Project",
+      "role": "Environment Design",
+      "tools": ["Tool 4", "Tool 5"],
+      "tags": ["environments"],
+      "featured": true,
+      "media": [
+        { "type": "image", "src": "placeholders/con-01.svg", "alt": "Final environment", "caption": "Final piece.", "w": 2400, "h": 1350 },
+        { "type": "image", "src": "placeholders/con-02.svg", "alt": "Thumbnails", "caption": "Thumbnails: exploring different compositions.", "w": 2400, "h": 1350 },
+        { "type": "image", "src": "placeholders/con-03.svg", "alt": "Color tests", "caption": "Color explorations.", "w": 2400, "h": 1350 }
+      ]
+    },
+    {
+      "slug": "character-design",
+      "category": "category2",
+      "title": "Character Design",
+      "year": 2025,
+      "cover": "placeholders/con-05.svg",
+      "summary": "Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.",
+      "role": "Character Design",
+      "tools": ["Tool 1"],
+      "tags": ["characters"],
+      "media": [
+        { "type": "image", "src": "placeholders/con-05.svg", "alt": "Character turnaround", "caption": "Turnaround.", "w": 2000, "h": 1500 },
+        { "type": "image", "src": "placeholders/con-06.svg", "alt": "Expression sheet", "caption": "Expression sheet.", "w": 2000, "h": 1500 }
+      ]
+    },
+    {
+      "slug": "props-design",
+      "category": "category2",
+      "title": "Props Design",
+      "year": 2024,
+      "cover": "placeholders/con-04.svg",
+      "tags": ["props"],
+      "media": [{ "type": "image", "src": "placeholders/con-04.svg", "alt": "Props sheet", "w": 2000, "h": 1500 }]
+    },
+
+    {
+      "slug": "demo-reel-2026",
+      "category": "category3",
+      "title": "Demo Reel 2026",
+      "year": 2026,
+      "cover": "placeholders/ani-01.svg",
+      "summary": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.",
+      "tools": ["Tool 6"],
+      "tags": ["reel"],
+      "featured": true,
+      "media": [
+        { "type": "video", "provider": "youtube", "id": "dQw4w9WgXcQ", "title": "Demo Reel 2026", "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
+      ]
+    },
+    {
+      "slug": "short-film",
+      "category": "category3",
+      "title": "Short Film",
+      "year": 2025,
+      "cover": "placeholders/ani-02.svg",
+      "summary": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+      "role": "Direction, Animation, Color",
+      "tools": ["Tool 6", "Tool 1"],
+      "tags": ["short-film"],
+      "media": [
+        { "type": "video", "provider": "vimeo", "id": "000000000", "title": "Short Film" },
+        { "type": "image", "src": "placeholders/ani-02.svg", "alt": "Key frame", "caption": "Key frame from the film.", "w": 1920, "h": 1080 }
+      ]
+    },
+    {
+      "slug": "animation-cycle",
+      "category": "category3",
+      "title": "Animation Cycle",
+      "year": 2024,
+      "cover": "placeholders/ani-03.svg",
+      "summary": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+      "tags": ["exercise"],
+      "media": [
+        { "type": "video", "provider": "youtube", "id": "dQw4w9WgXcQ", "title": "Animation Cycle", "caption": "Ut enim ad minim veniam, quis nostrud exercitation." }
+      ]
+    }
+  ]
+}

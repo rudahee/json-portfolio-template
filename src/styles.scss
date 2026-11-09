@@ -1,0 +1,5 @@
+// Global styles. Each component also has its own .scss.
+@use 'styles/tokens';  // palette, typography and sizing
+@use 'styles/base';    // reset and HTML elements
+@use 'styles/shared';  // pieces reused across pages
+@use 'styles/motion';  // transitions and reduced motion

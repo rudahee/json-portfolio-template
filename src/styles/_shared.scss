@@ -1,0 +1,86 @@
+/* =====================================================
+   Piezas compartidas
+   ===================================================== */
+.wrap {
+  width: min(100% - 2 * var(--gutter), var(--wrap));
+  margin-inline: auto;
+}
+
+.page {
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(4rem, 8vw, 7rem);
+}
+
+.page-head {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-size: var(--step-4);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  max-width: 22ch;
+}
+
+.page-lead {
+  margin-top: 1rem;
+  max-width: 50ch;
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.section {
+  padding-top: clamp(4rem, 8vw, 7rem);
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: var(--step-2);
+  font-weight: 760;
+  letter-spacing: -0.015em;
+}
+
+.subhead {
+  margin: 2.5rem 0 0.75rem;
+  font-size: var(--step-1);
+  font-weight: 700;
+}
+
+.prose {
+  max-width: 64ch;
+}
+
+.prose p + p {
+  margin-top: 1em;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75em 1.2em;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

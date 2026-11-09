@@ -1,0 +1,21 @@
+<footer class="footer">
+  <div class="footer__inner wrap">
+    <p class="footer__legal">
+      © {{ year }} {{ site()?.name }}. All works are the property of their creator and may not
+      be reused without permission.
+    </p>
+
+    @if (site()?.socials?.length) {
+      <ul class="footer__social" role="list">
+        @for (s of site()!.socials; track s.url) {
+          <!-- rel="me" allows profile verification on Mastodon and Pixelfed -->
+          <li><a [href]="s.url" target="_blank" rel="me noopener">{{ s.label }}</a></li>
+        }
+      </ul>
+    }
+
+    @if (site()?.sourceUrl) {
+      <a class="footer__source" [href]="site()!.sourceUrl" target="_blank" rel="noopener">Source code</a>
+    }
+  </div>
+</footer>

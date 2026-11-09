@@ -1,0 +1,28 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: -1rem 0 2.25rem;
+}
+
+.filters a {
+  padding-block: 0.3rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  background: linear-gradient(var(--accent), var(--accent)) no-repeat left bottom / 0 2px;
+  transition: background-size 0.25s ease;
+}
+
+.filters a:first-letter {
+  text-transform: uppercase;
+}
+
+.filters a:hover {
+  color: var(--ink);
+}
+
+.filters a.is-active {
+  color: var(--ink);
+  font-weight: 620;
+  background-size: 100% 2px;
+}

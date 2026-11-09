@@ -1,0 +1,56 @@
+{
+  "name": "Lorem Ipsum",
+  "role": "Creative Professional",
+  "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "email": "hello@example.com",
+  "location": "Lorem City",
+  "heroWork": "featured-project-1",
+
+  "theme": {
+    "accent": "#3f63d8",
+    "accentDark": "#8ea6ff"
+  },
+
+  "commissions": {
+    "open": true,
+    "note": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+
+  "contactNote": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+
+  "disciplines": {
+    "category1": {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    },
+    "category2": {
+      "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea."
+    },
+    "category3": {
+      "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
+    }
+  },
+
+  "about": {
+    "portrait": "placeholders/portrait.svg",
+    "bio": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    ],
+    "tools": ["Tool 1", "Tool 2", "Tool 3", "Tool 4", "Tool 5", "Tool 6"],
+    "experience": [
+      { "period": "2025 – Present", "role": "Lead Role", "org": "Lorem Studio" },
+      { "period": "2023 – 2025", "role": "Previous Role", "org": "Ipsum Agency" },
+      { "period": "2022", "role": "Education", "org": "Dolor University" }
+    ],
+    "cv": ""
+  },
+
+  "socials": [
+    { "label": "Instagram", "handle": "@loremipsum", "url": "https://instagram.com/loremipsum" },
+    { "label": "LinkedIn", "handle": "loremipsum", "url": "https://linkedin.com/in/loremipsum" },
+    { "label": "Behance", "handle": "loremipsum", "url": "https://behance.net/loremipsum" },
+    { "label": "GitHub", "handle": "@loremipsum", "url": "https://github.com/loremipsum" }
+  ],
+
+  "sourceUrl": ""
+}

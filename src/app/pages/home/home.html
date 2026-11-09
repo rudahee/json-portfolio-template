@@ -1,0 +1,79 @@
+<section class="hero wrap">
+  <div class="hero__text">
+    <h1 class="hero__name">
+      <span class="sr-only">{{ site()?.name }}</span>
+      <!-- Two passes of the same name: the blue sketch and the inked line on top -->
+      <span class="hero__layer hero__layer--rough" aria-hidden="true">
+        @for (line of nameLines(); track $index) {
+          <span>{{ line }}</span>
+        }
+      </span>
+      <span class="hero__layer hero__layer--clean" aria-hidden="true">
+        @for (line of nameLines(); track $index) {
+          <span>{{ line }}</span>
+        }
+      </span>
+    </h1>
+
+    <p class="hero__role">{{ site()?.role }}</p>
+    <p class="hero__intro">{{ site()?.intro }}</p>
+
+    @if (site()?.commissions; as c) {
+      <p class="hero__status" [class.is-open]="c.open">
+        <span class="hero__dot" aria-hidden="true"></span>
+        {{ c.open ? 'Open for commissions.' : 'Commissions closed for now.' }}
+        <a routerLink="/contact">{{ c.open ? 'Tell me about your project' : 'Contact' }}</a>
+      </p>
+    }
+  </div>
+
+  @if (hero(); as work) {
+    <figure class="hero__art">
+      <a [routerLink]="pathOf(work)">
+        <img
+          [src]="heroImage()?.src | media"
+          [alt]="heroImage()?.alt || work.title"
+          [attr.width]="heroImage()?.w ?? null"
+          [attr.height]="heroImage()?.h ?? null"
+          fetchpriority="high" />
+      </a>
+      <figcaption>
+        <a [routerLink]="pathOf(work)">{{ work.title }}</a>
+        @if (work.year) {
+          <span>{{ work.year }}</span>
+        }
+      </figcaption>
+    </figure>
+  }
+</section>
+
+@if (disciplines().length) {
+  <section class="section wrap" aria-labelledby="work-title">
+    <h2 id="work-title" class="section-title">Work</h2>
+    <ul class="disciplines" role="list">
+      @for (d of disciplines(); track d.categoryKey) {
+        <li>
+          <a class="discipline" [routerLink]="'/' + d.path">
+            <span class="discipline__frame">
+              @if (d.cover) {
+                <img [src]="d.cover | media" alt="" loading="lazy" decoding="async" />
+              }
+            </span>
+            <span class="discipline__name">{{ d.label }}</span>
+            @if (d.description) {
+              <span class="discipline__desc">{{ d.description }}</span>
+            }
+            <span class="discipline__count">{{ d.count }} {{ d.count === 1 ? 'piece' : 'pieces' }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </section>
+}
+
+@if (selection().length) {
+  <section class="section section--last wrap" aria-labelledby="selected-title">
+    <h2 id="selected-title" class="section-title">Selected Work</h2>
+    <app-work-grid [works]="selection()" ratio="1 / 1" />
+  </section>
+}

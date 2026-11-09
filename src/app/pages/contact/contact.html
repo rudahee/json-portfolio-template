@@ -1,0 +1,41 @@
+<section class="page wrap">
+  @if (site(); as s) {
+    <h1 class="page-title">Contact</h1>
+    @if (s.contactNote) {
+      <p class="page-lead">{{ s.contactNote }}</p>
+    }
+
+    @if (s.email) {
+      <a class="contact__email" [href]="'mailto:' + s.email">{{ s.email }}</a>
+    }
+
+    <div class="contact__grid">
+      @if (s.commissions; as c) {
+        <div>
+          <h2 class="subhead">{{ c.open ? 'Open for commissions' : 'Commissions closed for now' }}</h2>
+          @if (c.note) {
+            <p class="contact__note">{{ c.note }}</p>
+          }
+        </div>
+      }
+
+      @if (s.socials.length) {
+        <div>
+          <h2 class="subhead">Find me online</h2>
+          <ul class="contact__socials" role="list">
+            @for (link of s.socials; track link.url) {
+              <li>
+                <a [href]="link.url" target="_blank" rel="me noopener">
+                  <span class="contact__network">{{ link.label }}</span>
+                  @if (link.handle) {
+                    <span class="contact__handle">{{ link.handle }}</span>
+                  }
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  }
+</section>
